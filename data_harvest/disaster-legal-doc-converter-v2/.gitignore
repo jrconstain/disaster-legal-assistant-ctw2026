@@ -1,0 +1,16 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+
+output/markdown/*
+output/structured/*
+output/qa/*
+output/errors/*
+output/.state/*
+
+!output/markdown/.gitkeep
+!output/structured/.gitkeep
+!output/qa/.gitkeep
+!output/errors/.gitkeep
+!output/.state/.gitkeep

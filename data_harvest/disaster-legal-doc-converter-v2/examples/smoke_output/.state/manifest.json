@@ -1,0 +1,19 @@
+{
+  "manifest_version": 1,
+  "pipeline_version": "2.0.0",
+  "files": {
+    "FASECOLDA_comunicados_12aug-1357.pdf": {
+      "status": "success",
+      "sha256": "833505286f92df6d54172dfab351eb2b84cdf9886607989585d49170dab58115",
+      "size_bytes": 304801,
+      "pipeline_version": "2.0.0",
+      "model": "offline-fixture",
+      "converted_at_utc": "2026-08-15T18:28:46.980018+00:00",
+      "outputs": {
+        "markdown": "/mnt/data/disaster-legal-doc-converter-v2/examples/smoke_output/markdown/FASECOLDA_comunicados_12aug-1357.md",
+        "structured": "/mnt/data/disaster-legal-doc-converter-v2/examples/smoke_output/structured/FASECOLDA_comunicados_12aug-1357.json",
+        "qa": "/mnt/data/disaster-legal-doc-converter-v2/examples/smoke_output/qa/FASECOLDA_comunicados_12aug-1357.qa.json"
+      }
+    }
+  }
+}

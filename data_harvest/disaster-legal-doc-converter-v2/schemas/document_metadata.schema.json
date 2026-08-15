@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ctw2026.local/schemas/document-metadata-v2.schema.json",
+  "title": "Compact document metadata for disaster/legal RAG",
+  "description": "Metadata mínima para el front matter Markdown. La prioridad del corpus es preservar el contenido del documento, no enriquecer el encabezado.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "document_id",
+    "title",
+    "document_type",
+    "issuer",
+    "publication_date",
+    "event_date",
+    "jurisdiction",
+    "source_file",
+    "source_url",
+    "topics"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "2.0.0"
+    },
+    "document_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]*$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "document_type": {
+      "type": "string",
+      "enum": [
+        "norma",
+        "jurisprudencia",
+        "acto_administrativo",
+        "comunicado",
+        "boletin",
+        "guia",
+        "protocolo",
+        "manual",
+        "preguntas_frecuentes",
+        "pagina_institucional",
+        "formulario",
+        "convocatoria",
+        "directorio",
+        "informe",
+        "reporte_situacion",
+        "ficha_tecnica",
+        "otro"
+      ]
+    },
+    "issuer": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Entidad que emite el documento. Sin clasificaciones adicionales."
+    },
+    "publication_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Fecha ISO YYYY-MM-DD cuando pueda establecerse desde el documento."
+    },
+    "event_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Fecha ISO del desastre/evento concreto si el documento está ligado a uno."
+    },
+    "jurisdiction": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Ámbito territorial/jurisdicción principal, p. ej. Colombia o Bogotá D.C."
+    },
+    "source_file": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_url": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "URL de procedencia solo si está disponible en el material o es suministrada."
+    },
+    "topics": {
+      "type": "array",
+      "maxItems": 5,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      },
+      "description": "Máximo cinco temas realmente útiles para filtrado RAG."
+    }
+  }
+}

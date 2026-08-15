@@ -1,0 +1,15 @@
+{
+  "source_file": "FASECOLDA_comunicados_12aug-1357.pdf",
+  "pdf": {
+    "page_count": 3,
+    "local_extracted_characters": 6072
+  },
+  "blocks": 20,
+  "tables": 1,
+  "markdown_characters": 6522,
+  "processing_notes": [
+    "La tabla continúa entre las páginas 2 y 3 y fue reconstruida como una sola tabla."
+  ],
+  "warnings": [],
+  "passed": true
+}
