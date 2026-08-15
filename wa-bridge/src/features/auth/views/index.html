@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Bridge Connect</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --text-color: #f8fafc;
+            --accent-color: #22c55e;
+            --error-color: #ef4444;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at top left, #1e293b, var(--bg-color));
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            margin-top: 0;
+            font-weight: 600;
+            font-size: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        p.subtitle {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+        }
+
+        .qr-wrapper {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .qr-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: none;
+            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .loader {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #e2e8f0;
+            border-top: 4px solid var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .status-badge {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .status-badge.connected {
+            background: rgba(34, 197, 94, 0.2);
+            color: var(--accent-color);
+            box-shadow: 0 0 15px rgba(34, 197, 94, 0.3);
+        }
+
+        .status-badge.error {
+            background: rgba(239, 68, 68, 0.2);
+            color: var(--error-color);
+        }
+
+        .instructions {
+            margin-top: 30px;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            text-align: left;
+            line-height: 1.6;
+            background: rgba(0,0,0,0.2);
+            padding: 15px;
+            border-radius: 12px;
+        }
+
+        .instructions ol {
+            margin: 10px 0 0 0;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Connect WhatsApp</h1>
+        <p class="subtitle">Scan the QR code to bridge your account</p>
+
+        <div class="qr-wrapper">
+            <div class="loader" id="loader"></div>
+            <img id="qrcode" alt="WhatsApp QR Code" />
+        </div>
+
+        <div class="status-badge" id="statusBadge">Initializing...</div>
+
+        <div class="instructions">
+            <strong>How to connect:</strong>
+            <ol>
+                <li>Open WhatsApp on your phone</li>
+                <li>Tap <strong>Menu</strong> or <strong>Settings</strong></li>
+                <li>Select <strong>Linked Devices</strong></li>
+                <li>Tap <strong>Link a Device</strong> and scan the code</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        const qrImage = document.getElementById('qrcode');
+        const loader = document.getElementById('loader');
+        const statusBadge = document.getElementById('statusBadge');
+
+        async function fetchStatus() {
+            try {
+                const response = await fetch('/api/status');
+                const data = await response.json();
+
+                updateUI(data.status, data.qr);
+            } catch (err) {
+                console.error('Failed to fetch status', err);
+            }
+        }
+
+        function updateUI(status, qrDataUrl) {
+            statusBadge.innerText = status.replace(/_/g, ' ');
+
+            if (status === 'CONNECTED' || status === 'AUTHENTICATED') {
+                statusBadge.className = 'status-badge connected';
+                loader.style.display = 'none';
+                qrImage.style.display = 'none';
+                document.querySelector('.qr-wrapper').innerHTML = '<div style="color:#22c55e; font-size: 4rem;">✓</div>';
+            } else if (status === 'AWAITING_SCAN' && qrDataUrl) {
+                statusBadge.className = 'status-badge';
+                loader.style.display = 'none';
+                qrImage.src = qrDataUrl;
+                qrImage.style.display = 'block';
+            } else if (status === 'AUTH_FAILURE') {
+                statusBadge.className = 'status-badge error';
+                loader.style.display = 'none';
+            } else {
+                statusBadge.className = 'status-badge';
+                loader.style.display = 'block';
+                qrImage.style.display = 'none';
+            }
+        }
+
+        // Poll every 2 seconds
+        setInterval(fetchStatus, 2000);
+        fetchStatus();
+    </script>
+</body>
+</html>
