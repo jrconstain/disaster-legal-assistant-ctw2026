@@ -26,16 +26,16 @@ services:
 
   # --- SERVICIO BACKEND / BOT (wa-bridge) ---
   # Preparado para cuando se necesite dockerizar wa-bridge
-  # wa-bridge:
-  #   build: 
-  #     context: ./wa-bridge
-  #     dockerfile: Dockerfile
-  #   ports:
-  #     - "3001:3001"
-  #   volumes:
-  #     - ./wa-bridge:/app
-  #     - /app/node_modules
-  #   env_file:
-  #     - ./wa-bridge/.env
-  #   environment:
-  #     - NODE_ENV=development
+  wa-bridge:
+    build: 
+      context: ./wa-bridge
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./wa-bridge:/app
+      - /app/node_modules
+    env_file:
+      - ./wa-bridge/.env
+    environment:
+      - NODE_ENV=development
