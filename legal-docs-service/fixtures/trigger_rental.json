@@ -1,0 +1,7 @@
+{
+  "route": "rental",
+  "provider": "mock",
+  "case_json_path": "fixtures/rental_case_01/case.json",
+  "knowledge_md_path": "knowledge/knowledgebase_inmuebles_colombia_v0.1.md",
+  "output_dir": "outputs"
+}
