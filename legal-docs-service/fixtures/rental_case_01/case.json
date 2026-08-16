@@ -1,0 +1,154 @@
+{
+  "phone": "573004445566@lid",
+  "name": "Laura Marcela Gómez Castillo",
+  "cedula": "1144556789",
+  "claim": {
+    "type": "rental_damage_notice",
+    "status": "ready_to_generate",
+    "target": "Inmobiliaria Pacífico Urbano S.A.S. (ficticia)",
+    "contract_reference": "Contrato de arrendamiento suscrito 25/06/2026",
+    "requested_output": "comunicacion de afectacion, solicitud de evaluacion/habilitacion y definicion del tratamiento contractual del canon"
+  },
+  "location": {
+    "city": "Santiago de Cali",
+    "department": "Valle del Cauca",
+    "country": "Colombia",
+    "address": "Carrera 24B # 4-82, Apto. 402",
+    "is_synthetic": true
+  },
+  "ownership_status": "tenant",
+  "event": {
+    "type": "earthquake",
+    "date": "2026-08-10",
+    "approx_time": "07:34",
+    "description": "La arrendataria reporta desprendimiento de cielo raso en cocina y una grieta grande; salió preventivamente del inmueble.",
+    "left_property": true,
+    "authority_or_admin_instruction": "La administración indicó por mensajería que no regresaran hasta una revisión; no existe informe técnico adjunto.",
+    "technical_assessment": null
+  },
+  "damage": [
+    {
+      "id": "D-01",
+      "category": "ceiling_detachment",
+      "scope": "private",
+      "description": "Desprendimiento de cielo raso en cocina",
+      "structural_damage_confirmed": false
+    },
+    {
+      "id": "D-02",
+      "category": "wall_crack",
+      "scope": "private",
+      "description": "Grieta visible reportada en muro interior",
+      "structural_damage_confirmed": false
+    }
+  ],
+  "has_insurance": null,
+  "has_credit": null,
+  "building_type": "rented_apartment_in_horizontal_property",
+  "consent": true,
+  "is_confirmed": true,
+  "documents": [
+    {
+      "id": "DOC-RENT-01",
+      "type": "rental_contract",
+      "filename": "contrato_arrendamiento_vivienda_urbana_sintetico.pdf",
+      "source": "local",
+      "local_path": "fixtures/rental_case_01/contrato_arrendamiento_vivienda_urbana_sintetico.pdf",
+      "url": null,
+      "mime_type": "application/pdf",
+      "is_synthetic": true
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E-01",
+      "type": "image",
+      "description": "Desprendimiento de cielo raso en cocina",
+      "source": "local",
+      "local_path": "fixtures/rental_case_01/evidence/evidence_01_cielo_raso_cocina.jpg",
+      "url": null,
+      "mime_type": "image/jpeg",
+      "user_reported": true,
+      "model_observation": null,
+      "technical_conclusion": null,
+      "is_synthetic": true
+    },
+    {
+      "id": "E-02",
+      "type": "image",
+      "description": "Grieta visible reportada en muro interior",
+      "source": "local",
+      "local_path": "fixtures/rental_case_01/evidence/evidence_02_grieta_muro.jpg",
+      "url": null,
+      "mime_type": "image/jpeg",
+      "user_reported": true,
+      "model_observation": null,
+      "technical_conclusion": null,
+      "is_synthetic": true
+    },
+    {
+      "id": "E-03",
+      "type": "image",
+      "description": "Material desprendido y escombros en cocina",
+      "source": "local",
+      "local_path": "fixtures/rental_case_01/evidence/evidence_03_escombros_cocina.jpg",
+      "url": null,
+      "mime_type": "image/jpeg",
+      "user_reported": true,
+      "model_observation": null,
+      "technical_conclusion": null,
+      "is_synthetic": true
+    },
+    {
+      "id": "E-04",
+      "type": "image",
+      "description": "Fisura visible reportada en zona de circulación",
+      "source": "local",
+      "local_path": "fixtures/rental_case_01/evidence/evidence_04_pared_pasillo.jpg",
+      "url": null,
+      "mime_type": "image/jpeg",
+      "user_reported": true,
+      "model_observation": null,
+      "technical_conclusion": null,
+      "is_synthetic": true
+    }
+  ],
+  "history": [
+    {
+      "role": "user",
+      "content": "Soy arrendataria. Después del temblor se cayó una parte del cielo raso de la cocina y apareció una grieta grande. Desde esa noche estoy donde mi hermana."
+    },
+    {
+      "role": "assistant",
+      "content": "Si tienes el contrato y fotos, envíalos para identificar a quién debe dirigirse la comunicación y qué datos ya están disponibles."
+    },
+    {
+      "role": "user",
+      "content": "Adjunto el contrato y cuatro fotos.",
+      "attachments": [
+        "DOC-RENT-01",
+        "E-01",
+        "E-02",
+        "E-03",
+        "E-04"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "El contrato identifica a la arrendadora y a la inmobiliaria. Las fotos muestran afectaciones visibles, pero no permiten certificar daño estructural."
+    },
+    {
+      "role": "user",
+      "content": "La administración dijo por WhatsApp que no volviéramos hasta una revisión, pero todavía no hay informe."
+    },
+    {
+      "role": "assistant",
+      "content": "Se registra como antecedente y no como dictamen técnico. La comunicación se dirigirá a la inmobiliaria."
+    }
+  ],
+  "contact": {
+    "email": "laura.gomez.mock@example.com",
+    "phone": "3004445566",
+    "notification_address": "Carrera 24B # 4-82, Apto. 402"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "document_type": "rental_damage_notice",
+  "title": "Comunicacion de afectacion del inmueble arrendado",
+  "recipient": {
+    "name": "Inmobiliaria Pacífico Urbano S.A.S. (ficticia)",
+    "role": "Inmobiliaria / administradora del contrato",
+    "identification": null,
+    "email": "contratos@pacificourbano.example",
+    "phone": null,
+    "address": "Calle 10 # 00-00 Oficina 301, Cali"
+  },
+  "sender": {
+    "name": "Laura Marcela Gómez Castillo",
+    "role": "Arrendataria",
+    "identification": "1144556789",
+    "email": "laura.gomez.mock@example.com",
+    "phone": "3004445566",
+    "address": "Carrera 24B # 4-82, Apto. 402"
+  },
+  "subject": "Notificacion de afectaciones, solicitud de evaluacion y definicion de medidas contractuales",
+  "identifiers": [
+    {
+      "label": "Contrato",
+      "value": "Contrato de arrendamiento suscrito 25/06/2026"
+    }
+  ],
+  "opening": "Por medio de la presente informo las afectaciones reportadas despues del sismo y dejo constancia de la imposibilidad actual de retomar normalmente el uso residencial mientras esta pendiente la revision del inmueble.",
+  "facts": [
+    "La persona informa un evento de tipo earthquake ocurrido el 2026-08-10.",
+    "El inmueble reportado se encuentra en Carrera 24B # 4-82, Apto. 402, Santiago de Cali.",
+    "La arrendataria reporta desprendimiento de cielo raso en cocina y una grieta grande; salió preventivamente del inmueble.",
+    "La administración indicó por mensajería que no regresaran hasta una revisión; no existe informe técnico adjunto."
+  ],
+  "damages": [
+    "Desprendimiento de cielo raso en cocina",
+    "Grieta visible reportada en muro interior"
+  ],
+  "legal_reasoning": [
+    {
+      "rule": "El arrendamiento tiene como finalidad permitir el uso y goce del inmueble para la destinacion pactada, y el arrendador debe mantenerlo en estado de servir para ese fin y atender las reparaciones necesarias que legalmente le correspondan.",
+      "case_application": "El expediente reporta desprendimiento de cielo raso y una grieta, la salida preventiva de la arrendataria y una instruccion de la administracion de no regresar hasta que se realice una revision. No existe informe tecnico que permita afirmar destruccion total o dano estructural.",
+      "conclusion": "Mientras se realiza la evaluacion, reparacion o habilitacion necesaria, se solicita una definicion escrita de las medidas contractuales aplicables y del tratamiento del canon, evitando presentar la terminacion como automatica sin soporte suficiente.",
+      "source_ids": [
+        "WEB-RENT-LEY820-BASE",
+        "WEB-RENT-CC-1982-1985-2008"
+      ],
+      "citation_text": "Ley 820 de 2003; Codigo Civil, arts. 1982, 1985 y 2008."
+    }
+  ],
+  "requests": [
+    "Coordinar o informar la evaluacion del inmueble y las reparaciones o actuaciones necesarias para determinar cuando puede retomarse su uso residencial.",
+    "Informar por escrito las condiciones para la rehabilitacion y eventual retorno al inmueble.",
+    "Definir y ajustar el tratamiento del canon y de las obligaciones contractuales durante el periodo en que no ha sido posible ejercer el uso y goce residencial, evitando que se continue facturando como si el inmueble estuviera disponible para su destinacion ordinaria."
+  ],
+  "evidence": [
+    {
+      "evidence_id": "E-01",
+      "title": "Evidencia E-01",
+      "description": "Desprendimiento de cielo raso en cocina"
+    },
+    {
+      "evidence_id": "E-02",
+      "title": "Evidencia E-02",
+      "description": "Grieta visible reportada en muro interior"
+    },
+    {
+      "evidence_id": "E-03",
+      "title": "Evidencia E-03",
+      "description": "Material desprendido y escombros en cocina"
+    },
+    {
+      "evidence_id": "E-04",
+      "title": "Evidencia E-04",
+      "description": "Fisura visible reportada en zona de circulación"
+    }
+  ],
+  "attachments": [
+    {
+      "attachment_id": "DOC-RENT-01",
+      "label": "contrato_arrendamiento_vivienda_urbana_sintetico.pdf"
+    }
+  ],
+  "notifications": [
+    {
+      "name": "Laura Marcela Gómez Castillo",
+      "role": "Arrendataria",
+      "email": "laura.gomez.mock@example.com",
+      "phone": "3004445566",
+      "address": "Carrera 24B # 4-82, Apto. 402"
+    },
+    {
+      "name": "Inmobiliaria Pacífico Urbano S.A.S. (ficticia)",
+      "role": "Inmobiliaria / administradora del contrato",
+      "email": "contratos@pacificourbano.example",
+      "phone": null,
+      "address": "Calle 10 # 00-00 Oficina 301, Cali"
+    }
+  ],
+  "closing": "Solicito respuesta escrita y que esta comunicacion se incorpore al expediente del contrato. Las fotografias se aportan como registro de las afectaciones visibles y no como dictamen tecnico.",
+  "signature_name": "Laura Marcela Gómez Castillo",
+  "warnings": [
+    "Fixture sintetico de prueba."
+  ]
+}
