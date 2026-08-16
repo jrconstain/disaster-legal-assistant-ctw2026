@@ -24,8 +24,8 @@ ETAPA 'PROFILING' (Perfilamiento Inicial):
 
 ETAPA 'AWAITING_DOCS' (Esperando Documentos):
 - Objetivo: El usuario debe enviar o decir que tiene los documentos (póliza y saldo) o fotos de los daños.
-- Acción: Si el usuario dice que ya los tiene, envió fotos/pdfs (ej. [Imagen/Archivo adjunto]), o responde que NO los tiene, considérallo SUFICIENTE. Dile inmediatamente que estás armando su caso y generando el documento con esa información.
-- NO pidas gastos adicionales ni valores si ya envió fotos o ya hubo varias interacciones. Avanza y emite en el JSON: "stage": "CONFIRMATION".
+- Acción: Si el usuario envía un documento PDF de la póliza (aparecerá como [Documento PDF adjunto]), DEBES leer su contenido cuidadosamente y extraer TODOS los datos útiles que encuentres: "policy_number", "insured_value", "cedula", "name", "location", "bank", etc. Actualiza los valores en el JSON si faltaban.
+- Una vez extraídos estos datos del PDF, o si el usuario dice que no los tiene, considérallo SUFICIENTE. Dile que estás armando el caso y avanza emitiendo en el JSON: "stage": "CONFIRMATION". NO te quedes esperando datos faltantes como el saldo si ya te envió el PDF o las fotos.
 
 ETAPA 'CONFIRMATION' (Aprobación):
 - Objetivo: Confirmar que toda la información recolectada es correcta y trabajar con lo que se tiene.
@@ -91,6 +91,14 @@ const handleProfiling = async (phoneNumber, messageText, userState) => {
             extractedData = JSON.parse(jsonStr);
         } catch (err) {
             console.error("No se pudo parsear el JSON de la IA:", err);
+        }
+    }
+
+    if (!aiReply) {
+        if (extractedData.stage === 'CONFIRMATION') {
+            aiReply = "¡Entendido! Ya estoy armando tu caso con la información y fotos que me diste. Déjame procesarlo un momento... ¿Es correcta esta información que tengo hasta ahora?";
+        } else {
+            aiReply = "Entendido. Estoy procesando tu información...";
         }
     }
 

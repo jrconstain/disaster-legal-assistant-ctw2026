@@ -51,6 +51,14 @@ const initializeApp = async () => {
                         const groqProvider = require('./services/providers/groq.provider');
                         const transcribedText = await groqProvider.transcribeAudio(media.data, media.mimetype);
                         messageText = `[Nota de voz transcrita]: ${transcribedText}`;
+                    } else if (media && media.mimetype === 'application/pdf') {
+                        console.log(`[DEBUG] PDF detectado, extrayendo texto...`);
+                        const pdfParse = require('pdf-parse');
+                        const dataBuffer = Buffer.from(media.data, 'base64');
+                        const pdfData = await pdfParse(dataBuffer);
+                        // Truncar para no exceder límite de tokens (las carátulas de póliza están al inicio)
+                        const truncatedText = pdfData.text.substring(0, 4000);
+                        messageText = `[Documento PDF adjunto: ${msg.body || 'Documento'}]:\nContenido extraído (primeras páginas):\n${truncatedText}`;
                     }
                 } catch (mediaError) {
                     console.error(`[ERROR] Falló la descarga o transcripción del audio: ${mediaError.message || mediaError}`);
