@@ -9,7 +9,7 @@ class GroqProvider {
             apiKey: process.env.GROQ_API_KEY
         });
         // Usamos un modelo válido de Groq
-        this.model = 'openai/gpt-oss-20b';
+        this.model = 'llama-3.3-70b-versatile';
     }
 
     async processMessage(systemPrompt, history, newMessage) {
@@ -32,11 +32,11 @@ class GroqProvider {
             console.error("Error en Groq API:", error);
             // Si el modelo principal falla, intentar con un modelo por defecto de Groq como fallback.
             if (error.message && error.message.includes('model')) {
-                console.warn(`Falló el modelo ${this.model}, intentando con llama-3.1-8b-instant...`);
+                console.warn(`Falló el modelo ${this.model}, intentando con llama3-8b-8192...`);
                 try {
                     const fallbackCompletion = await this.client.chat.completions.create({
                         messages: messages,
-                        model: 'llama-3.1-8b-instant',
+                        model: 'llama3-8b-8192',
                         temperature: 0.3,
                     });
                     return fallbackCompletion.choices[0]?.message?.content || "";
