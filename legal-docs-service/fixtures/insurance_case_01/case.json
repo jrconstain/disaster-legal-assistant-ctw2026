@@ -1,0 +1,199 @@
+{
+  "phone": "573001112233@lid",
+  "name": "Cleotilda Paz Gómez",
+  "cedula": "1144882731",
+  "claim": {
+    "type": "insurance_loss_notice",
+    "status": "ready_to_generate",
+    "target": "Seguros Horizonte Andino S.A. (ficticia)",
+    "policy_number": "HOG-2026-0048127",
+    "requested_output": "aviso inicial descriptivo del siniestro con fotos; sin cuantificar la reclamacion"
+  },
+  "location": {
+    "city": "Santiago de Cali",
+    "department": "Valle del Cauca",
+    "country": "Colombia",
+    "address": "Carrera 34 # 4A-58, Apto. 602",
+    "is_synthetic": true
+  },
+  "ownership_status": "owner",
+  "event": {
+    "type": "earthquake",
+    "date": "2026-08-10",
+    "approx_time": "07:34",
+    "description": "El usuario reporta que después del terremoto encontró grietas en la sala, una ventana rota y desprendimiento parcial del cielo raso.",
+    "technical_assessment": null,
+    "authority_reported": false
+  },
+  "damage": [
+    {
+      "id": "D-01",
+      "category": "wall_crack",
+      "scope": "private",
+      "description": "Grieta visible reportada en muro de sala",
+      "structural_damage_confirmed": false
+    },
+    {
+      "id": "D-02",
+      "category": "broken_window",
+      "scope": "private",
+      "description": "Vidrio de ventana fracturado",
+      "structural_damage_confirmed": false
+    },
+    {
+      "id": "D-03",
+      "category": "ceiling_detachment",
+      "scope": "private",
+      "description": "Desprendimiento parcial de cielo raso",
+      "structural_damage_confirmed": false
+    }
+  ],
+  "has_insurance": true,
+  "has_credit": false,
+  "building_type": "apartment_in_horizontal_property",
+  "consent": true,
+  "is_confirmed": true,
+  "documents": [
+    {
+      "id": "DOC-INS-01",
+      "type": "insurance_policy",
+      "filename": "poliza_hogar_sintetica_colombia.pdf",
+      "source": "local",
+      "local_path": "fixtures/insurance_case_01/poliza_hogar_sintetica_colombia.pdf",
+      "url": null,
+      "mime_type": "application/pdf",
+      "is_synthetic": true
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E-01",
+      "type": "image",
+      "description": "Grieta visible reportada en muro de sala",
+      "source": "local",
+      "local_path": "fixtures/insurance_case_01/evidence/evidence_01_grieta_sala.jpg",
+      "url": null,
+      "mime_type": "image/jpeg",
+      "user_reported": true,
+      "model_observation": null,
+      "technical_conclusion": null,
+      "is_synthetic": true
+    },
+    {
+      "id": "E-02",
+      "type": "image",
+      "description": "Ventana con vidrio fracturado",
+      "source": "local",
+      "local_path": "fixtures/insurance_case_01/evidence/evidence_02_ventana_rota.jpg",
+      "url": null,
+      "mime_type": "image/jpeg",
+      "user_reported": true,
+      "model_observation": null,
+      "technical_conclusion": null,
+      "is_synthetic": true
+    },
+    {
+      "id": "E-03",
+      "type": "image",
+      "description": "Desprendimiento parcial de cielo raso",
+      "source": "local",
+      "local_path": "fixtures/insurance_case_01/evidence/evidence_03_cielo_raso.jpg",
+      "url": null,
+      "mime_type": "image/jpeg",
+      "user_reported": true,
+      "model_observation": null,
+      "technical_conclusion": null,
+      "is_synthetic": true
+    },
+    {
+      "id": "E-04",
+      "type": "image",
+      "description": "Detalle de fisura/grieta reportada",
+      "source": "local",
+      "local_path": "fixtures/insurance_case_01/evidence/evidence_04_muro_detalle.jpg",
+      "url": null,
+      "mime_type": "image/jpeg",
+      "user_reported": true,
+      "model_observation": null,
+      "technical_conclusion": null,
+      "is_synthetic": true
+    },
+    {
+      "id": "E-05",
+      "type": "image",
+      "description": "Escombros interiores posteriores al evento",
+      "source": "local",
+      "local_path": "fixtures/insurance_case_01/evidence/evidence_05_escombros.jpg",
+      "url": null,
+      "mime_type": "image/jpeg",
+      "user_reported": true,
+      "model_observation": null,
+      "technical_conclusion": null,
+      "is_synthetic": true
+    },
+    {
+      "id": "E-06",
+      "type": "image",
+      "description": "Vista exterior de afectación reportada",
+      "source": "local",
+      "local_path": "fixtures/insurance_case_01/evidence/evidence_06_fachada.jpg",
+      "url": null,
+      "mime_type": "image/jpeg",
+      "user_reported": true,
+      "model_observation": null,
+      "technical_conclusion": null,
+      "is_synthetic": true
+    }
+  ],
+  "expenses": [
+    {
+      "description": "Protección provisional de una zona del cielo raso",
+      "amount_cop": 280000,
+      "paid": true,
+      "support_document": null,
+      "note": "El usuario afirma tener factura, pero no fue incluida en este fixture inicial."
+    }
+  ],
+  "history": [
+    {
+      "role": "user",
+      "content": "Soy el propietario. Tengo un seguro de hogar. Después del sismo quedaron grietas en la sala, se rompió una ventana y se cayó parte del cielo raso. Te mando la póliza.",
+      "attachments": [
+        "DOC-INS-01"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "Póliza recibida. Extraigo asegurado, inmueble, vigencia y coberturas sin asumir que todo daño está cubierto."
+    },
+    {
+      "role": "user",
+      "content": "Te mando las fotos de los daños.",
+      "attachments": [
+        "E-01",
+        "E-02",
+        "E-03",
+        "E-04",
+        "E-05",
+        "E-06"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "Organicé las evidencias. Las describo como daños visibles/reportados; no concluyo daño estructural por fotografía."
+    },
+    {
+      "role": "user",
+      "content": "Pagué 280 mil para tapar provisionalmente una parte. Todavía no tengo cotización completa."
+    },
+    {
+      "role": "assistant",
+      "content": "Se puede presentar un aviso inicial del siniestro dejando para una etapa posterior la acreditacion completa de cuantia y soportes."
+    }
+  ],
+  "contact": {
+    "email": "andres.martinez.mock@example.com",
+    "phone": "3001112233",
+    "notification_address": "Carrera 34 # 4A-58, Apto. 602"
+  }
+}
