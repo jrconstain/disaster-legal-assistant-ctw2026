@@ -1,0 +1,6 @@
+{
+  "name": "Jovita",
+  "description": "Asistente IA para afectaciones a inmuebles",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
