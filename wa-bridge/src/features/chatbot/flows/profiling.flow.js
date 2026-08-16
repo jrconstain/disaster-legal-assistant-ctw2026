@@ -1,5 +1,8 @@
 const dbService = require('../db.service');
 const llmService = require('../../../services/llm.service');
+const util = require('util');
+const execAsync = util.promisify(require('child_process').exec);
+const path = require('path');
 
 const getSystemPrompt = (userState) => {
     return `
@@ -105,7 +108,41 @@ const handleProfiling = async (phoneNumber, messageText, userState) => {
     // 4. Actualizar la base de datos local
     dbService.updateUserState(phoneNumber, extractedData, messageText, aiReply);
 
-    // 5. Retornar el mensaje que se enviará al usuario
+    let mediaPath = null;
+
+    // 5. Si pasamos a DOCUMENT_READY, generar el PDF de prueba
+    if (extractedData.stage === 'DOCUMENT_READY' || (userState.stage === 'CONFIRMATION' && extractedData.stage === 'AWAITING_RADICADO')) {
+        console.log("[DEBUG] Stage es DOCUMENT_READY. Iniciando generación del PDF en modo demo...");
+        try {
+            const legalDocsDir = path.resolve(__dirname, '../../../../../../legal-docs-service');
+            const { stdout } = await execAsync('./venv/bin/python main.py --demo insurance', { cwd: legalDocsDir });
+            
+            // Buscar la ruta del PDF en el output JSON
+            try {
+                // Buscamos el objeto JSON en la salida estándar
+                const jsonMatch = stdout.match(/\{[\s\S]*\}/);
+                if (jsonMatch) {
+                    const resultJson = JSON.parse(jsonMatch[0]);
+                    if (resultJson.pdf) {
+                        mediaPath = resultJson.pdf;
+                        console.log(`[DEBUG] PDF generado exitosamente en: ${mediaPath}`);
+                    }
+                } else {
+                    console.error("[ERROR] No se encontró output JSON en la ejecución de Python:", stdout);
+                }
+            } catch (parseError) {
+                console.error("[ERROR] Falló el parseo del output de Python:", parseError);
+            }
+        } catch (execError) {
+            console.error("[ERROR] Falló la ejecución de main.py:", execError);
+        }
+    }
+
+    // 6. Retornar el objeto con el mensaje y el mediaPath (si lo hay)
+    if (mediaPath) {
+        return { text: aiReply, mediaPath: mediaPath };
+    }
+
     return aiReply;
 };
 

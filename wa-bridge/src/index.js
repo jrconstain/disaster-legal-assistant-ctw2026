@@ -105,10 +105,27 @@ const initializeApp = async () => {
 
                 console.log(`[DEBUG] Enviando a Chatbot (Agrupado): ${combinedText} (Usuario: ${userId})`);
                 try {
-                    const reply = await chatbotController.handleIncomingMessage(userId, combinedText);
-                    console.log(`[DEBUG] Respuesta del Chatbot: ${reply}`);
-                    if (reply) {
-                        finalMsg.reply(reply);
+                    const result = await chatbotController.handleIncomingMessage(userId, combinedText);
+                    
+                    if (typeof result === 'string') {
+                        console.log(`[DEBUG] Respuesta del Chatbot: ${result}`);
+                        finalMsg.reply(result);
+                    } else if (result && result.text) {
+                        console.log(`[DEBUG] Respuesta del Chatbot: ${result.text}`);
+                        await finalMsg.reply(result.text);
+                        
+                        if (result.mediaPath) {
+                            try {
+                                const { MessageMedia } = require('whatsapp-web.js');
+                                console.log(`[DEBUG] Preparando PDF para enviar: ${result.mediaPath}`);
+                                const media = MessageMedia.fromFilePath(result.mediaPath);
+                                await finalMsg.reply(media);
+                                console.log(`[DEBUG] PDF enviado exitosamente.`);
+                            } catch (mediaError) {
+                                console.error("[ERROR] No se pudo enviar el PDF generado:", mediaError);
+                                await finalMsg.reply("Hubo un problema al intentar enviarte el documento generado.");
+                            }
+                        }
                     }
                 } catch (error) {
                     console.error("Error en procesamiento agrupado:", error);
