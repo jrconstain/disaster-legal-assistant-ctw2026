@@ -1,0 +1,103 @@
+{
+  "document_type": "insurance_loss_notice",
+  "title": "Aviso de ocurrencia de siniestro",
+  "recipient": {
+    "name": "Seguros Horizonte Andino S.A. (ficticia)",
+    "role": "Aseguradora",
+    "identification": null,
+    "email": "siniestros.hogar@horizonteandino.example",
+    "phone": "01 8000 000 426",
+    "address": "Avenida Colombia # 00-00, Cali (dirección ficticia)"
+  },
+  "sender": {
+    "name": "Andrés Felipe Martínez Gómez",
+    "role": "Asegurado",
+    "identification": "1144882731",
+    "email": "andres.martinez.mock@example.com",
+    "phone": "3001112233",
+    "address": "Carrera 34 # 4A-58, Apto. 602"
+  },
+  "subject": "Aviso de ocurrencia de siniestro y remision de evidencia fotografica",
+  "identifiers": [
+    {
+      "label": "Poliza",
+      "value": "HOG-2026-0048127"
+    }
+  ],
+  "opening": "Por medio de la presente pongo en conocimiento de la aseguradora la ocurrencia del evento y las afectaciones inicialmente observadas en el inmueble asegurado.",
+  "facts": [
+    "La persona informa un evento de tipo earthquake ocurrido el 2026-08-10.",
+    "El inmueble reportado se encuentra en Carrera 34 # 4A-58, Apto. 602, Santiago de Cali.",
+    "El usuario reporta que después del terremoto encontró grietas en la sala, una ventana rota y desprendimiento parcial del cielo raso."
+  ],
+  "damages": [
+    "Grieta visible reportada en muro de sala",
+    "Vidrio de ventana fracturado",
+    "Desprendimiento parcial de cielo raso"
+  ],
+  "legal_reasoning": [],
+  "requests": [
+    "Tener por informado el evento descrito en esta comunicacion.",
+    "Confirmar la recepcion del aviso e indicar, si corresponde, el numero de siniestro o referencia para su seguimiento.",
+    "Informar el canal o las instrucciones posteriores que deban seguirse para la evaluacion del caso."
+  ],
+  "evidence": [
+    {
+      "evidence_id": "E-01",
+      "title": "Evidencia E-01",
+      "description": "Grieta visible reportada en muro de sala"
+    },
+    {
+      "evidence_id": "E-02",
+      "title": "Evidencia E-02",
+      "description": "Ventana con vidrio fracturado"
+    },
+    {
+      "evidence_id": "E-03",
+      "title": "Evidencia E-03",
+      "description": "Desprendimiento parcial de cielo raso"
+    },
+    {
+      "evidence_id": "E-04",
+      "title": "Evidencia E-04",
+      "description": "Detalle de fisura/grieta reportada"
+    },
+    {
+      "evidence_id": "E-05",
+      "title": "Evidencia E-05",
+      "description": "Escombros interiores posteriores al evento"
+    },
+    {
+      "evidence_id": "E-06",
+      "title": "Evidencia E-06",
+      "description": "Vista exterior de afectación reportada"
+    }
+  ],
+  "attachments": [
+    {
+      "attachment_id": "DOC-INS-01",
+      "label": "poliza_hogar_sintetica_colombia.pdf"
+    }
+  ],
+  "notifications": [
+    {
+      "name": "Andrés Felipe Martínez Gómez",
+      "role": "Asegurado",
+      "email": "andres.martinez.mock@example.com",
+      "phone": "3001112233",
+      "address": "Carrera 34 # 4A-58, Apto. 602"
+    },
+    {
+      "name": "Seguros Horizonte Andino S.A. (ficticia)",
+      "role": "Aseguradora",
+      "email": "siniestros.hogar@horizonteandino.example",
+      "phone": "01 8000 000 426",
+      "address": "Avenida Colombia # 00-00, Cali (dirección ficticia)"
+    }
+  ],
+  "closing": "Adjunto las fotografias disponibles para documentar el estado observado. Esta comunicacion corresponde al aviso inicial del evento y no pretende cuantificar la perdida.",
+  "signature_name": "Andrés Felipe Martínez Gómez",
+  "warnings": [
+    "Fixture sintetico de prueba. No constituye una reclamacion real."
+  ]
+}

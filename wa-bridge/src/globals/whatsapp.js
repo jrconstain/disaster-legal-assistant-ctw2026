@@ -7,7 +7,9 @@ class WhatsAppClient {
             authStrategy: new LocalAuth(),
             puppeteer: {
                 executablePath: '/usr/bin/chromium',
-                args: ['--no-sandbox', '--disable-setuid-sandbox']
+                args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
+                timeout: 60000,
+                protocolTimeout: 300000
             }
         });
 
