@@ -7,9 +7,7 @@ const handleWelcome = (phoneNumber, messageText, userState) => {
         
         if (isYes) {
             dbService.updateUserState(phoneNumber, { consent: true }, messageText, "Mensaje de bienvenida enviado");
-            return `Hola 👋 Soy *Jovita, una IA* que te ayuda si tu inmueble sufrió daños por un sismo, inundación, deslizamiento u otra emergencia.
-
-Puedo revisar contratos o pólizas, organizar tus evidencias y ayudarte a *preparar una reclamación o comunicación y explicarte cómo radicarla*. 📄
+            return `¡Excelente! 🙌 
 
 Para empezar, *cuéntame tu caso como te salga*, por texto o nota de voz: dónde queda📍, si eres propietario o arrendatario 🏠, qué pasó y qué daños hubo 💥. Si eres propietario, dime también si tienes seguro, pagas un crédito o vives en un edificio o conjunto.
 
@@ -19,9 +17,13 @@ Para empezar, *cuéntame tu caso como te salga*, por texto o nota de voz: dónde
             dbService.updateUserState(phoneNumber, { consent: false }, messageText, "Consentimiento denegado");
             return "Entendido. No podemos procesar tu solicitud ya que no autorizaste el tratamiento de datos. Si cambias de opinión, envíanos un 'Sí'.";
         } else {
-            return `Para ayudarte, voy a necesitar algunos datos personales y los documentos que compartas. Al continuar, autorizas su uso únicamente para analizar tu caso y preparar los documentos que solicites, de acuerdo con la *Ley 1581 de 2012*. Más información: *[link]*.
+            return `Hola 👋 Soy *Jovita, una IA*. Estoy aquí para ayudarte si tu inmueble sufrió daños por un sismo, inundación, deslizamiento u otra emergencia.
 
-*¿Autorizas el tratamiento de tus datos?*
+Puedo revisar contratos o pólizas, organizar tus evidencias y ayudarte a *preparar una reclamación o comunicación*. 📄
+
+Para poder empezar a guiarte, voy a necesitar algunos datos personales y los documentos que compartas. Al continuar, autorizas su uso únicamente para analizar tu caso y preparar los documentos que solicites, de acuerdo con la *Ley 1581 de 2012*. Más información: *[link]*.
+
+*¿Autorizas el tratamiento de tus datos para continuar?*
 
 ✅ Sí
 ❌ No`;
@@ -30,9 +32,7 @@ Para empezar, *cuéntame tu caso como te salga*, por texto o nota de voz: dónde
         const isYes = /^(si|sí|✅ si|✅ sí|yes|acepto)/i.test(messageText.trim());
         if (isYes) {
             dbService.updateUserState(phoneNumber, { consent: true }, messageText, "Consentimiento aceptado tras negación");
-            return `Hola 👋 Soy *Jovita, una IA* que te ayuda si tu inmueble sufrió daños por un sismo, inundación, deslizamiento u otra emergencia.
-
-Puedo revisar contratos o pólizas, organizar tus evidencias y ayudarte a *preparar una reclamación o comunicación y explicarte cómo radicarla*. 📄
+            return `¡Excelente! 🙌 
 
 Para empezar, *cuéntame tu caso como te salga*, por texto o nota de voz: dónde queda📍, si eres propietario o arrendatario 🏠, qué pasó y qué daños hubo 💥. Si eres propietario, dime también si tienes seguro, pagas un crédito o vives en un edificio o conjunto.
 

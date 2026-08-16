@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  # --- SERVICIO FRONTEND (Landing) ---
+  landing:
+    build: 
+      context: ./landing
+      dockerfile: Dockerfile
+    ports:
+      - "3002:3000"
+    volumes:
+      - ./landing:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+
+  # Expositor público para el Landing usando Zrok
+  zrok-landing:
+    image: openziti/zrok
+    depends_on:
+      - landing
+    env_file:
+      - ./landing/.env
+    entrypoint: ["/bin/sh", "-c"]
+    command: ["zrok disable || true; zrok enable $$ZROK_ENABLE_TOKEN && zrok share public http://landing:3000 --headless"]
+
+  # --- SERVICIO BACKEND / BOT (wa-bridge) ---
+  # Preparado para cuando se necesite dockerizar wa-bridge
+  # wa-bridge:
+  #   build: 
+  #     context: ./wa-bridge
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "3001:3001"
+  #   volumes:
+  #     - ./wa-bridge:/app
+  #     - /app/node_modules
+  #   env_file:
+  #     - ./wa-bridge/.env
+  #   environment:
+  #     - NODE_ENV=development
