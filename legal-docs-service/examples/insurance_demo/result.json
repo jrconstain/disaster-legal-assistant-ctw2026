@@ -1,0 +1,11 @@
+{
+  "status": "generated",
+  "route": "insurance",
+  "provider": "mock",
+  "case_json": "/mnt/data/legal-docs-service-minimal-ctw2026/fixtures/insurance_case_01/case.json",
+  "knowledge_md": "/mnt/data/legal-docs-service-minimal-ctw2026/knowledge/knowledgebase_inmuebles_colombia_v0.1.md",
+  "pdf": "/mnt/data/legal-docs-service-minimal-ctw2026/examples/insurance/20260815_223138_insurance_573001112233/document.pdf",
+  "draft_json": "/mnt/data/legal-docs-service-minimal-ctw2026/examples/insurance/20260815_223138_insurance_573001112233/draft.json",
+  "evidence_count": 6,
+  "document_count": 1
+}
