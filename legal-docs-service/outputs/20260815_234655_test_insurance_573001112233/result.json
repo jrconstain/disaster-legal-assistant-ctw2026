@@ -1,0 +1,14 @@
+{
+  "status": "generated",
+  "mode": "test",
+  "route": "insurance",
+  "provider": "openai",
+  "case_json": "C:\\Users\\Lenovo\\Documents\\2026\\CTW2026\\disaster-legal-assistant-ctw2026\\legal-docs-service\\fixtures\\insurance_case_01\\case.json",
+  "knowledge_md": "C:\\Users\\Lenovo\\Documents\\2026\\CTW2026\\disaster-legal-assistant-ctw2026\\legal-docs-service\\knowledge\\knowledgebase_inmuebles_colombia_v0.1.md",
+  "pdf": "C:\\Users\\Lenovo\\Documents\\2026\\CTW2026\\disaster-legal-assistant-ctw2026\\legal-docs-service\\outputs\\20260815_234655_test_insurance_573001112233\\document.pdf",
+  "pdf_uri": "file:///C:/Users/Lenovo/Documents/2026/CTW2026/disaster-legal-assistant-ctw2026/legal-docs-service/outputs/20260815_234655_test_insurance_573001112233/document.pdf",
+  "draft_json": "C:\\Users\\Lenovo\\Documents\\2026\\CTW2026\\disaster-legal-assistant-ctw2026\\legal-docs-service\\outputs\\20260815_234655_test_insurance_573001112233\\draft.json",
+  "evidence_count": 6,
+  "document_count": 1,
+  "validation_warnings": []
+}

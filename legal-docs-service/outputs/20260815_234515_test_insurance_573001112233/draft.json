@@ -1,0 +1,126 @@
+{
+  "document_type": "insurance_loss_notice",
+  "title": "Aviso inicial de ocurrencia de siniestro – Póliza HOG-2026-0048127",
+  "recipient": {
+    "name": "Seguros Horizonte Andino S.A.",
+    "role": "Aseguradora",
+    "identification": null,
+    "email": "siniestros.hogar@horizonteandino.example",
+    "phone": "01 8000 000 426 / (602) 555 0142",
+    "address": "Avenida Colombia # 00-00, Cali"
+  },
+  "sender": {
+    "name": "Andrés Felipe Martínez Gómez",
+    "role": "Tomador y asegurado",
+    "identification": "C.C. 1.144.882.731",
+    "email": "andres.martinez.mock@example.com",
+    "phone": "3001112233",
+    "address": "Carrera 34 # 4A-58, Apto. 602, Santiago de Cali, Valle del Cauca"
+  },
+  "subject": "Aviso inicial de ocurrencia de siniestro por evento sísmico en inmueble asegurado",
+  "identifiers": [
+    {
+      "label": "Número de póliza",
+      "value": "HOG-2026-0048127"
+    },
+    {
+      "label": "Inmueble asegurado",
+      "value": "Carrera 34 # 4A-58, Apto. 602, Santiago de Cali, Valle del Cauca"
+    },
+    {
+      "label": "Fecha informada del evento",
+      "value": "10 de agosto de 2026"
+    },
+    {
+      "label": "Hora aproximada informada",
+      "value": "07:34"
+    }
+  ],
+  "opening": "Señores Seguros Horizonte Andino S.A.: Por medio de la presente, Andrés Felipe Martínez Gómez, identificado con cédula de ciudadanía número 1.144.882.731, en calidad de tomador y asegurado, comunica inicialmente la ocurrencia de un evento que podría constituir un siniestro relacionado con el inmueble amparado por la póliza de hogar número HOG-2026-0048127.",
+  "facts": [
+    "El inmueble asegurado corresponde al apartamento 602 ubicado en la Carrera 34 # 4A-58, Santiago de Cali, Valle del Cauca.",
+    "El asegurado informa que, después del terremoto ocurrido el 10 de agosto de 2026, aproximadamente a las 07:34, encontró afectaciones en el inmueble.",
+    "Las afectaciones inicialmente reportadas comprenden una grieta visible en un muro de la sala, la fractura del vidrio de una ventana y el desprendimiento parcial de una parte del cielo raso.",
+    "Las fotografías remitidas muestran, de manera aparente, líneas de fisura o grieta, un vidrio fracturado, desprendimientos y material esparcido en áreas interiores, así como una afectación visible en el exterior del edificio. Estas imágenes se presentan únicamente como registro visual y no constituyen un dictamen sobre la causa, estabilidad estructural, seguridad o habitabilidad del inmueble.",
+    "La póliza aportada registra como amparo contratado el de terremoto, temblor y erupción volcánica, sin que este aviso pretenda establecer la procedencia de cobertura, la relación causal definitiva ni la cuantía de una eventual pérdida.",
+    "La póliza registra vigencia del 20 de enero de 2026 al 20 de enero de 2027, según el documento aportado."
+  ],
+  "damages": [
+    "Grieta visible reportada en un muro de la sala; su alcance y naturaleza técnica se encuentran pendientes de evaluación.",
+    "Vidrio de ventana fracturado, según el reporte del asegurado y el registro fotográfico remitido.",
+    "Desprendimiento parcial de cielo raso, según el reporte del asegurado y el registro fotográfico remitido.",
+    "En algunas imágenes se observan aparentes desprendimientos, escombros y afectaciones adicionales en áreas interiores y exteriores. La determinación de su alcance, origen y relación con el evento corresponde a la inspección y análisis que adelante la aseguradora o el profesional competente.",
+    "Este aviso inicial no incluye cuantificación de la pérdida ni pretende acreditar de manera completa su cuantía."
+  ],
+  "legal_reasoning": [],
+  "requests": [
+    "Acusar recibo de este aviso inicial de ocurrencia de siniestro.",
+    "Asignar y comunicar el número de siniestro o referencia correspondiente.",
+    "Informar el procedimiento y los canales para el seguimiento del caso.",
+    "Indicar los documentos o soportes adicionales que deban aportarse en la etapa correspondiente.",
+    "Informar si se requiere inspección del inmueble o la intervención de un ajustador o profesional técnico, precisando las instrucciones aplicables para preservar la evidencia y evitar la extensión del daño, siempre sin poner en riesgo la integridad de las personas.",
+    "Dejar constancia de que la acreditación detallada de la ocurrencia, el alcance de los daños y, cuando corresponda, la cuantía será complementada posteriormente conforme a las condiciones de la póliza y a los requerimientos pertinentes."
+  ],
+  "evidence": [
+    {
+      "evidence_id": "E-01",
+      "title": "Registro visual de grieta en muro de sala",
+      "description": "Imagen remitida para documentar una línea visible compatible con la grieta reportada en un muro de la sala. No permite establecer por sí sola la naturaleza estructural, causa o alcance del daño."
+    },
+    {
+      "evidence_id": "E-02",
+      "title": "Registro visual de ventana con vidrio fracturado",
+      "description": "Imagen remitida en la que se observa una ventana con vidrio aparentemente fracturado y material desprendido en el área inferior. No constituye dictamen técnico."
+    },
+    {
+      "evidence_id": "E-03",
+      "title": "Registro visual de desprendimiento de cielo raso",
+      "description": "Imagen remitida para documentar un desprendimiento aparente en la parte inferior de un elemento del cielo raso, junto con material suelto. No permite certificar estabilidad ni seguridad."
+    },
+    {
+      "evidence_id": "E-04",
+      "title": "Detalle fotográfico de afectación interior",
+      "description": "Fotografía remitida en la que se observan aparentes desprendimientos de muro o acabados y escombros en un área interior del inmueble. El alcance y la causa requieren evaluación técnica."
+    },
+    {
+      "evidence_id": "E-05",
+      "title": "Escombros y afectación interior posterior al evento",
+      "description": "Fotografía remitida en la que se observan escombros y aparentes desprendimientos en un espacio interior. Se incorpora como registro visual, sin conclusión sobre habitabilidad o daño estructural."
+    },
+    {
+      "evidence_id": "E-06",
+      "title": "Vista exterior de afectación reportada",
+      "description": "Fotografía remitida en la que se aprecia una afectación visible en el exterior de la edificación, en el sector correspondiente al inmueble o sus inmediaciones. La imagen no permite determinar si se trata de un bien privado o común ni establecer su alcance técnico."
+    }
+  ],
+  "attachments": [
+    {
+      "attachment_id": "DOC-INS-01",
+      "label": "Póliza individual de seguro de hogar Hogar Integral número HOG-2026-0048127"
+    }
+  ],
+  "notifications": [
+    {
+      "name": "Andrés Felipe Martínez Gómez",
+      "role": "Tomador y asegurado",
+      "email": "andres.martinez.mock@example.com",
+      "phone": "3001112233",
+      "address": "Carrera 34 # 4A-58, Apto. 602, Santiago de Cali, Valle del Cauca"
+    },
+    {
+      "name": "Seguros Horizonte Andino S.A.",
+      "role": "Aseguradora y destinataria del aviso",
+      "email": "siniestros.hogar@horizonteandino.example",
+      "phone": "01 8000 000 426 / (602) 555 0142",
+      "address": "Avenida Colombia # 00-00, Cali"
+    }
+  ],
+  "closing": "Agradezco confirmar la recepción de esta comunicación y suministrar la referencia asignada al caso. La presente comunicación se formula como aviso inicial y descriptivo, sin cuantificar la reclamación ni constituir aceptación de cobertura, reconocimiento de responsabilidad o acreditación definitiva de la pérdida.",
+  "signature_name": "Andrés Felipe Martínez Gómez",
+  "warnings": [
+    "El documento y la póliza aportada fueron identificados en el expediente como sintéticos o ficticios; deben verificarse antes de cualquier uso real.",
+    "Las fotografías se incorporan como evidencia visual. No permiten certificar daño estructural, estabilidad, causa técnica ni inhabitabilidad.",
+    "Este aviso inicial no cuantifica la pérdida y no sustituye la acreditación posterior de la ocurrencia, los daños ni, cuando corresponda, la cuantía.",
+    "La presentación o recepción del aviso, sus anexos o una eventual inspección no implica por sí misma aceptación de cobertura ni reconocimiento de cuantía por parte de la aseguradora."
+  ]
+}

@@ -1,0 +1,354 @@
+{
+  "case_id": "jovita-573001112233",
+  "phone": "573001112233",
+  "name": "Juan José Rojas Constaín",
+  "cedula": "1-113-682-988",
+  "claim": {
+    "type": "insurance_loss_notice",
+    "status": "ready_to_generate",
+    "target": "SEGUROS HORIZONTE ANDINO S.A.",
+    "policy_number": "HOG-2026-0081640",
+    "requested_output": "aviso inicial descriptivo del siniestro con fotos; sin cuantificar la reclamación"
+  },
+  "location": {
+    "city": null,
+    "department": null,
+    "country": "Colombia",
+    "address": "Carrera 56 número 14-57, apartamento 402",
+    "property_name": "Conjunto Villas de Guadalupe",
+    "is_synthetic": true
+  },
+  "ownership_status": "owner",
+  "event": {
+    "type": "terremoto",
+    "date": "2026-08-10",
+    "approx_time": "07:34",
+    "description": "El usuario afirma que el terremoto ocurrió el 10 de agosto de 2026 aproximadamente a las 7:34 y que vio los daños ese mismo día.",
+    "technical_assessment": null,
+    "authority_reported": false,
+    "user_reports_uninhabitable": true
+  },
+  "damage": [
+    {
+      "id": "D-01",
+      "category": "techo",
+      "scope": "private",
+      "description": "Se cayeron partes del techo.",
+      "structural_damage_confirmed": false
+    },
+    {
+      "id": "D-02",
+      "category": "paredes",
+      "scope": "private",
+      "description": "Las paredes quedaron destruidas.",
+      "structural_damage_confirmed": false
+    },
+    {
+      "id": "D-03",
+      "category": "objetos personales",
+      "scope": "private",
+      "description": "Se destruyeron muchos objetos.",
+      "structural_damage_confirmed": false
+    }
+  ],
+  "has_insurance": true,
+  "has_credit": true,
+  "credit": {
+    "bank": "Bancolombia",
+    "status": "active_reported"
+  },
+  "building_type": "apartment_in_horizontal_property",
+  "consent": true,
+  "is_confirmed": false,
+  "documents": [
+    {
+      "id": "DOC-INS-01",
+      "type": "insurance_policy",
+      "filename": "b03fcb55e0_poliza_hogar_sintetica_juan_jose_rojas_constain.pdf",
+      "source": "local",
+      "local_path": "C:\\Users\\Lenovo\\Documents\\2026\\CTW2026\\disaster-legal-assistant-ctw2026\\jovita-bot-service\\data\\scenario_run\\cases\\573001112233_26990a6bc8\\attachments\\b03fcb55e0_poliza_hogar_sintetica_juan_jose_rojas_constain.pdf",
+      "url": null,
+      "mime_type": "application/pdf",
+      "is_synthetic": true,
+      "extracted": {
+        "insurer": "SEGUROS HORIZONTE ANDINO S.A.",
+        "policy_number": "HOG-2026-0081640",
+        "insured_name": "Juan José Rojas Constaín",
+        "insured_id": "C.C. 1-113-682-988",
+        "property_address": "Carrera 56 # 14-57, Apartamento 402, Edificio Villas de Guadalupe, Santiago de Cali, Valle del Cauca",
+        "effective_from": "20/01/2026 00:00",
+        "effective_to": "20/01/2027 00:00",
+        "earthquake_coverage_found": true,
+        "coverages": [
+          {
+            "name": "Incendio, rayo y explosión",
+            "building_limit_cop": 480000000,
+            "contents_limit_cop": 60000000,
+            "deductible": "Sin deducible"
+          },
+          {
+            "name": "Terremoto, temblor y erupción volcánica",
+            "building_limit_cop": 480000000,
+            "contents_limit_cop": 60000000,
+            "deductible": "2% del valor asegurado del bien afectado, mínimo $2.000.000"
+          },
+          {
+            "name": "Daños por agua",
+            "building_limit_cop": 60000000,
+            "contents_limit_cop": null,
+            "deductible": "$500.000"
+          },
+          {
+            "name": "Rotura accidental de vidrios",
+            "building_limit_cop": 12000000,
+            "contents_limit_cop": null,
+            "deductible": "$250.000"
+          },
+          {
+            "name": "Hurto calificado de contenidos",
+            "building_limit_cop": null,
+            "contents_limit_cop": 35000000,
+            "deductible": "$750.000"
+          },
+          {
+            "name": "Responsabilidad civil familiar",
+            "building_limit_cop": 120000000,
+            "contents_limit_cop": null,
+            "deductible": "$500.000"
+          },
+          {
+            "name": "Gastos adicionales tras siniestro cubierto",
+            "building_limit_cop": 22000000,
+            "contents_limit_cop": null,
+            "deductible": "Según gasto acreditado"
+          }
+        ],
+        "claim_channels": [
+          "Línea nacional 01 8000 000 426",
+          "Cali (602) 555 0142",
+          "Correo siniestros.hogar@horizonteandino.example",
+          "Portal https://horizonteandino.example/siniestros",
+          "Dirección Avenida Colombia # 00-00, Santiago de Cali (dirección ficticia)"
+        ],
+        "mortgage_declared": false,
+        "onerous_beneficiary": "Ninguno",
+        "warnings": [
+          "El documento se identifica como completamente sintético y fue creado exclusivamente como fixture de pruebas para el Hackathon CTW 2026.",
+          "No acredita una póliza real, no prueba cobertura, no genera obligaciones para ninguna aseguradora y no puede utilizarse para presentar una reclamación real.",
+          "La compañía, número de póliza, valores, coberturas y canales son ficticios.",
+          "La existencia de un amparo no implica que todo daño sea indemnizable; deben verificarse el evento, la causalidad, las preexistencias, la cuantía, los deducibles, los límites y las exclusiones contractuales.",
+          "La presentación de un aviso, una inspección o la recepción de documentos no constituye por sí misma aceptación de cobertura ni reconocimiento de cuantía.",
+          "El aviso inicial debe darse tan pronto como sea posible y dentro del término legal aplicable desde que el asegurado o beneficiario conoció o debió conocer el siniestro.",
+          "La hipoteca figura como “No declarada para este fixture” y el beneficiario oneroso como “Ninguno”."
+        ]
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E-01",
+      "type": "image",
+      "description": "Interior con escombros y elementos de mampostería y revestimiento aparentemente desprendidos o rotos.",
+      "source": "local",
+      "local_path": "C:\\Users\\Lenovo\\Documents\\2026\\CTW2026\\disaster-legal-assistant-ctw2026\\jovita-bot-service\\data\\scenario_run\\cases\\573001112233_26990a6bc8\\attachments\\41564b72b0_evidence_01_interior.jpg",
+      "url": null,
+      "mime_type": "image/jpeg",
+      "user_reported": true,
+      "model_observation": "Interior con escombros y elementos de mampostería y revestimiento aparentemente desprendidos o rotos.",
+      "technical_conclusion": null,
+      "is_synthetic": true
+    },
+    {
+      "id": "E-02",
+      "type": "image",
+      "description": "Fotografía de un interior con abundantes escombros y materiales desprendidos en el piso, además de elementos muebles desplazados o dañados visiblemente.",
+      "source": "local",
+      "local_path": "C:\\Users\\Lenovo\\Documents\\2026\\CTW2026\\disaster-legal-assistant-ctw2026\\jovita-bot-service\\data\\scenario_run\\cases\\573001112233_26990a6bc8\\attachments\\a1391c520a_evidence_02_escombros.jpg",
+      "url": null,
+      "mime_type": "image/jpeg",
+      "user_reported": true,
+      "model_observation": "Fotografía de un interior con abundantes escombros y materiales desprendidos en el piso, además de elementos muebles desplazados o dañados visiblemente.",
+      "technical_conclusion": null,
+      "is_synthetic": true
+    },
+    {
+      "id": "E-03",
+      "type": "image",
+      "description": "Fotografía de una fachada de edificio de ladrillo con daños y escombros visibles, especialmente en los niveles inferiores y en un sector de los balcones.",
+      "source": "local",
+      "local_path": "C:\\Users\\Lenovo\\Documents\\2026\\CTW2026\\disaster-legal-assistant-ctw2026\\jovita-bot-service\\data\\scenario_run\\cases\\573001112233_26990a6bc8\\attachments\\55bb154dea_evidence_03_fachada.jpg",
+      "url": null,
+      "mime_type": "image/jpeg",
+      "user_reported": true,
+      "model_observation": "Fotografía de una fachada de edificio de ladrillo con daños y escombros visibles, especialmente en los niveles inferiores y en un sector de los balcones.",
+      "technical_conclusion": null,
+      "is_synthetic": true
+    }
+  ],
+  "expenses": [],
+  "history": [
+    {
+      "role": "user",
+      "content": "consent_yes",
+      "timestamp": "2026-08-16T06:44:45.838927+00:00"
+    },
+    {
+      "role": "assistant",
+      "content": "Listo. Ahora sí, cuéntame qué pasó como te salga. Si tienes una póliza, contrato, fotos o notas de voz, puedes mandarlas en cualquier momento.",
+      "timestamp": "2026-08-16T06:44:45.838927+00:00"
+    },
+    {
+      "role": "user",
+      "content": "Ahorita, imagínate que, pues yo tengo, pues tenía mi apartamento en el conjunto Villas de Guadalupe. Eso es la carrera 56, número 14-57, el apartamento 402. Yo soy el dueño, pues la verdad, yo no me acuerdo de haberle comprado ningún seguro, pero pues todavía lo estoy pagando con Bancolombia, el crédito hipotecario. Llevo pagando 12 años, me faltan ocho. La verdad es que la casa quedó destruida, se cayeron partes del techo, paredes, se me destruyeron muchos objetos, quedó inhabitable prácticamente. Y bueno, la verdad no sé qué hacer. Soy Juan José Rojas. Mi cédula es 1-113-682-988.",
+      "timestamp": "2026-08-16T06:44:51.326143+00:00"
+    },
+    {
+      "role": "assistant",
+      "content": "Por lo que me cuentas, eres propietario y todavía tienes un crédito hipotecario con Bancolombia. Aunque no recuerdes haber comprado un seguro por separado, vale la pena localizar la póliza vigente asociada al inmueble. Puedes pedir al banco el certificado o póliza de incendio/terremoto y enviármelo aquí en PDF. También puedes mandarme desde ya las fotos de los daños; las iré guardando sin sacar conclusiones estructurales.",
+      "timestamp": "2026-08-16T06:44:51.326143+00:00"
+    },
+    {
+      "role": "user",
+      "content": "Encontré esta póliza. Creo que debe ser la del apartamento.",
+      "timestamp": "2026-08-16T06:45:04.097371+00:00",
+      "attachments": [
+        "DOC-INS-01"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "Leí la póliza y coincide con la identidad y el inmueble del caso. Encontré un amparo relacionado con terremoto/temblor; esto no equivale a una decisión de cobertura del siniestro. El documento se identifica como completamente sintético y fue creado exclusivamente como fixture de pruebas para el Hackathon CTW 2026. No acredita una póliza real, no prueba cobertura, no genera obligaciones para ninguna aseguradora y no puede utilizarse para presentar una reclamación real. La compañía, número de póliza, valores, coberturas y canales son ficticios. La existencia de un amparo no implica que todo daño sea indemnizable; deben verificarse el evento, la causalidad, las preexistencias, la cuantía, los deducibles, los límites y las exclusiones contractuales. La presentación de un aviso, una inspección o la recepción de documentos no constituye por sí misma aceptación de cobertura ni reconocimiento de cuantía. El aviso inicial debe darse tan pronto como sea posible y dentro del término legal aplicable desde que el asegurado o beneficiario conoció o debió conocer el siniestro. La hipoteca figura como “No declarada para este fixture” y el beneficiario oneroso como “Ninguno”.\n\nPóliza recibida. Identifiqué SEGUROS HORIZONTE ANDINO S.A., la póliza HOG-2026-0081640 y un amparo relacionado con terremoto. Eso nos permite avanzar, pero no significa todavía que la aseguradora haya aceptado todos los daños. Envíame las fotos o videos que tengas; los organizaré como evidencia sin diagnosticar daño estructural.",
+      "timestamp": "2026-08-16T06:45:04.097371+00:00"
+    },
+    {
+      "role": "user",
+      "content": "Estas son las fotos que pude tomar de cómo quedó el apartamento y el edificio.",
+      "timestamp": "2026-08-16T06:45:19.090956+00:00",
+      "attachments": [
+        "E-01",
+        "E-02",
+        "E-03"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "Ya guardé 3 evidencias. En las imágenes puedo describir desprendimientos, mampostería dañada y escombros visibles, pero no determinar estabilidad o habitabilidad por foto. Solo me falta una cosa importante para el aviso: ¿qué día ocurrió el sismo o cuándo notaste los daños? Si recuerdas la hora aproximada, dímela también. Y cuéntame si ya pagaste alguna reparación o medida provisional.",
+      "timestamp": "2026-08-16T06:45:19.090956+00:00"
+    },
+    {
+      "role": "user",
+      "content": "Fue el terremoto del 10 de agosto de 2026, como a las 7:34. Yo vi los daños ese mismo día. No he hecho reparaciones ni he pagado nada todavía y tampoco tengo una cotización completa.",
+      "timestamp": "2026-08-16T06:45:22.882478+00:00"
+    },
+    {
+      "role": "assistant",
+      "content": "Con lo que ya tengo podemos preparar un *aviso inicial del siniestro*: identifica la póliza, el inmueble, el evento y las evidencias disponibles, sin tener que inventar una cotización completa ni afirmar que la cobertura ya fue aceptada. ¿Quieres que lo prepare ahora?",
+      "timestamp": "2026-08-16T06:45:22.883482+00:00"
+    },
+    {
+      "role": "user",
+      "content": "Sí, hagámoslo",
+      "timestamp": "2026-08-16T06:45:24.804884+00:00"
+    },
+    {
+      "role": "assistant",
+      "content": "Antes de generar, revisa que esto esté bien:\n\n👤 *Nombre:* Juan José Rojas Constaín\n🪪 *Cédula:* 1-113-682-988\n🏠 *Inmueble:* Carrera 56 número 14-57, apartamento 402, Conjunto Villas de Guadalupe\n📄 *Póliza:* HOG-2026-0081640 — SEGUROS HORIZONTE ANDINO S.A.\n🌎 *Evento:* terremoto — 2026-08-10 07:34\n📷 *Fotos guardadas:* 3\n\n*Daños reportados/observados:*\n• Se cayeron partes del techo.\n• Las paredes quedaron destruidas.\n• Se destruyeron muchos objetos.\n\nEl documento será un *aviso inicial descriptivo del siniestro*. No voy a afirmar que la aseguradora ya aceptó cobertura ni a inventar una cuantía.",
+      "timestamp": "2026-08-16T06:45:24.804884+00:00"
+    },
+    {
+      "role": "user",
+      "content": "confirm_yes",
+      "timestamp": "2026-08-16T06:45:24.836585+00:00"
+    },
+    {
+      "role": "assistant",
+      "content": "Tus datos quedaron confirmados, pero falló la generación del PDF: legal-docs-service falló.\nSTDOUT:\n\nSTDERR:\nTraceback (most recent call last):\n  File \"C:\\Users\\Lenovo\\Documents\\2026\\CTW2026\\disaster-legal-assistant-ctw2026\\legal-docs-service\\main.py\", line 7, in <module>\n    from service.io import PROJECT_ROOT, load_case, load_json, resolve_path\n  File \"C:\\Users\\Lenovo\\Documents\\2026\\CTW2026\\disaster-legal-assistant-ctw2026\\legal-docs-service\\service\\io.py\", line 7, in <module>\n    from pypdf import PdfReader\nModuleNotFoundError: No module named 'pypdf'\n",
+      "timestamp": "2026-08-16T06:45:24.936665+00:00"
+    }
+  ],
+  "contact": {
+    "email": null,
+    "phone": "573001112233",
+    "notification_address": "Carrera 56 número 14-57, apartamento 402"
+  },
+  "generated_outputs": [],
+  "_jovita": {
+    "state": "generation_error",
+    "route": "insurance",
+    "policy_extraction": {
+      "insurer": "SEGUROS HORIZONTE ANDINO S.A.",
+      "policy_number": "HOG-2026-0081640",
+      "insured_name": "Juan José Rojas Constaín",
+      "insured_id": "C.C. 1-113-682-988",
+      "property_address": "Carrera 56 # 14-57, Apartamento 402, Edificio Villas de Guadalupe, Santiago de Cali, Valle del Cauca",
+      "effective_from": "20/01/2026 00:00",
+      "effective_to": "20/01/2027 00:00",
+      "earthquake_coverage_found": true,
+      "coverages": [
+        {
+          "name": "Incendio, rayo y explosión",
+          "building_limit_cop": 480000000,
+          "contents_limit_cop": 60000000,
+          "deductible": "Sin deducible"
+        },
+        {
+          "name": "Terremoto, temblor y erupción volcánica",
+          "building_limit_cop": 480000000,
+          "contents_limit_cop": 60000000,
+          "deductible": "2% del valor asegurado del bien afectado, mínimo $2.000.000"
+        },
+        {
+          "name": "Daños por agua",
+          "building_limit_cop": 60000000,
+          "contents_limit_cop": null,
+          "deductible": "$500.000"
+        },
+        {
+          "name": "Rotura accidental de vidrios",
+          "building_limit_cop": 12000000,
+          "contents_limit_cop": null,
+          "deductible": "$250.000"
+        },
+        {
+          "name": "Hurto calificado de contenidos",
+          "building_limit_cop": null,
+          "contents_limit_cop": 35000000,
+          "deductible": "$750.000"
+        },
+        {
+          "name": "Responsabilidad civil familiar",
+          "building_limit_cop": 120000000,
+          "contents_limit_cop": null,
+          "deductible": "$500.000"
+        },
+        {
+          "name": "Gastos adicionales tras siniestro cubierto",
+          "building_limit_cop": 22000000,
+          "contents_limit_cop": null,
+          "deductible": "Según gasto acreditado"
+        }
+      ],
+      "claim_channels": [
+        "Línea nacional 01 8000 000 426",
+        "Cali (602) 555 0142",
+        "Correo siniestros.hogar@horizonteandino.example",
+        "Portal https://horizonteandino.example/siniestros",
+        "Dirección Avenida Colombia # 00-00, Santiago de Cali (dirección ficticia)"
+      ],
+      "mortgage_declared": false,
+      "onerous_beneficiary": "Ninguno",
+      "warnings": [
+        "El documento se identifica como completamente sintético y fue creado exclusivamente como fixture de pruebas para el Hackathon CTW 2026.",
+        "No acredita una póliza real, no prueba cobertura, no genera obligaciones para ninguna aseguradora y no puede utilizarse para presentar una reclamación real.",
+        "La compañía, número de póliza, valores, coberturas y canales son ficticios.",
+        "La existencia de un amparo no implica que todo daño sea indemnizable; deben verificarse el evento, la causalidad, las preexistencias, la cuantía, los deducibles, los límites y las exclusiones contractuales.",
+        "La presentación de un aviso, una inspección o la recepción de documentos no constituye por sí misma aceptación de cobertura ni reconocimiento de cuantía.",
+        "El aviso inicial debe darse tan pronto como sea posible y dentro del término legal aplicable desde que el asegurado o beneficiario conoció o debió conocer el siniestro.",
+        "La hipoteca figura como “No declarada para este fixture” y el beneficiario oneroso como “Ninguno”."
+      ]
+    },
+    "policy_match": true,
+    "created_at": "2026-08-16T06:44:45.817306+00:00",
+    "last_updated": "2026-08-16T06:45:24.936665+00:00"
+  }
+}

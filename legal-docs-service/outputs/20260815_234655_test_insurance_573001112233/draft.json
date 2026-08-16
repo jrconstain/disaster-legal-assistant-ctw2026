@@ -1,0 +1,122 @@
+{
+  "document_type": "insurance_loss_notice",
+  "title": "Aviso inicial de ocurrencia de siniestro – Póliza HOG-2026-0048127",
+  "recipient": {
+    "name": "Seguros Horizonte Andino S.A.",
+    "role": "Aseguradora",
+    "identification": null,
+    "email": "siniestros.hogar@horizonteandino.example",
+    "phone": "01 8000 000 426; (602) 555 0142",
+    "address": "Avenida Colombia # 00-00, Cali"
+  },
+  "sender": {
+    "name": "Andrés Felipe Martínez Gómez",
+    "role": "Tomador y asegurado",
+    "identification": "C.C. 1.144.882.731",
+    "email": "andres.martinez.mock@example.com",
+    "phone": "3001112233",
+    "address": "Carrera 34 # 4A-58, Apto. 602, Santiago de Cali, Valle del Cauca, Colombia"
+  },
+  "subject": "Aviso inicial de ocurrencia de siniestro por evento sísmico – inmueble ubicado en Carrera 34 # 4A-58, Apto. 602, Santiago de Cali",
+  "identifiers": [
+    {
+      "label": "Número de póliza",
+      "value": "HOG-2026-0048127"
+    },
+    {
+      "label": "Fecha del evento reportado",
+      "value": "10 de agosto de 2026"
+    },
+    {
+      "label": "Hora aproximada reportada",
+      "value": "07:34"
+    },
+    {
+      "label": "Inmueble asegurado",
+      "value": "Carrera 34 # 4A-58, Apto. 602, Santiago de Cali, Valle del Cauca, Colombia"
+    }
+  ],
+  "opening": "Señores Seguros Horizonte Andino S.A.: Por medio de la presente, yo, Andrés Felipe Martínez Gómez, identificado con cédula de ciudadanía No. 1.144.882.731, en calidad de tomador y asegurado de la póliza de hogar No. HOG-2026-0048127, me permito informar la ocurrencia de un evento que habría afectado el inmueble asegurado y solicitar la apertura de la referencia correspondiente.",
+  "facts": [
+    "El asegurado reporta que, después del terremoto ocurrido el 10 de agosto de 2026, aproximadamente a las 07:34, encontró afectaciones en el apartamento ubicado en la dirección indicada.",
+    "El inmueble corresponde a un apartamento en propiedad horizontal destinado a vivienda familiar permanente.",
+    "Las afectaciones inicialmente reportadas comprenden una grieta visible en un muro de la sala, la fractura del vidrio de una ventana y el desprendimiento parcial del cielo raso.",
+    "El asegurado remite registro fotográfico de las afectaciones observadas y reportadas, para facilitar la identificación inicial del evento y la coordinación de la atención correspondiente."
+  ],
+  "damages": [
+    "Grieta visible reportada en un muro de la sala. La evidencia fotográfica permite observar una fisura o grieta aparente, sin que ello constituya un diagnóstico sobre su naturaleza o alcance.",
+    "Vidrio de ventana fracturado, según lo reportado por el asegurado y el registro fotográfico aportado.",
+    "Desprendimiento parcial del cielo raso, según lo reportado por el asegurado y el registro fotográfico aportado.",
+    "En algunas imágenes se observan material desprendido, escombros interiores y una afectación visible en elementos del inmueble y de la fachada. Estas observaciones no constituyen certificación de daño estructural, estabilidad, habitabilidad ni determinación de causa técnica."
+  ],
+  "legal_reasoning": [],
+  "requests": [
+    "Acusar recibo del presente aviso inicial de ocurrencia.",
+    "Asignar y comunicar el número de siniestro o referencia de atención correspondiente.",
+    "Informar los canales, documentos e instrucciones necesarios para el seguimiento del caso y, si procede, para la inspección del inmueble.",
+    "Indicar si se requiere coordinación con la administración de la copropiedad u otra actuación preventiva, sin que la recepción de este aviso implique una solicitud de reconocimiento de cobertura o de cuantía en esta etapa.",
+    "Dejar constancia de que la acreditación detallada de la ocurrencia, los daños y, cuando corresponda, la cuantía será complementada posteriormente con los soportes pertinentes."
+  ],
+  "evidence": [
+    {
+      "evidence_id": "E-01",
+      "title": "Grieta visible reportada en muro de sala",
+      "description": "Registro fotográfico suministrado por el asegurado en el que se aprecia una línea de fisura o grieta aparente en un muro."
+    },
+    {
+      "evidence_id": "E-02",
+      "title": "Ventana con vidrio fracturado",
+      "description": "Registro fotográfico suministrado por el asegurado en el que se aprecia una ventana con el vidrio fracturado y material desprendido en el área inferior."
+    },
+    {
+      "evidence_id": "E-03",
+      "title": "Desprendimiento parcial de cielo raso",
+      "description": "Registro fotográfico suministrado por el asegurado en el que se aprecia una afectación visible en el cielo raso, con material desprendido."
+    },
+    {
+      "evidence_id": "E-04",
+      "title": "Detalle de fisura o afectación interior reportada",
+      "description": "Registro fotográfico suministrado por el asegurado en el que se observan material constructivo expuesto, deterioro visible y escombros en un área interior del inmueble."
+    },
+    {
+      "evidence_id": "E-05",
+      "title": "Escombros interiores posteriores al evento",
+      "description": "Registro fotográfico suministrado por el asegurado en el que se observan escombros y elementos desprendidos en el interior del inmueble."
+    },
+    {
+      "evidence_id": "E-06",
+      "title": "Vista exterior de afectación reportada",
+      "description": "Registro fotográfico suministrado por el asegurado en el que se aprecia una afectación visible en el frente o fachada del edificio, sin que la imagen permita establecer su alcance estructural ni su causa técnica."
+    }
+  ],
+  "attachments": [
+    {
+      "attachment_id": "DOC-INS-01",
+      "label": "Póliza individual de seguro de hogar – Hogar Integral, póliza HOG-2026-0048127"
+    }
+  ],
+  "notifications": [
+    {
+      "name": "Andrés Felipe Martínez Gómez",
+      "role": "Tomador y asegurado",
+      "email": "andres.martinez.mock@example.com",
+      "phone": "3001112233",
+      "address": "Carrera 34 # 4A-58, Apto. 602, Santiago de Cali, Valle del Cauca, Colombia"
+    },
+    {
+      "name": "Seguros Horizonte Andino S.A.",
+      "role": "Aseguradora y destinataria del aviso",
+      "email": "siniestros.hogar@horizonteandino.example",
+      "phone": "01 8000 000 426; (602) 555 0142",
+      "address": "Avenida Colombia # 00-00, Cali"
+    }
+  ],
+  "closing": "Agradezco confirmar la recepción de esta comunicación y remitir el número de siniestro o referencia asignada, junto con las instrucciones para continuar el trámite. La presente comunicación corresponde exclusivamente a un aviso inicial y no contiene cuantificación de la pérdida ni constituye afirmación sobre la procedencia de cobertura.",
+  "signature_name": "Andrés Felipe Martínez Gómez",
+  "warnings": [
+    "La presente comunicación es un aviso inicial descriptivo del evento y no una reclamación completa ni una cuantificación de la pérdida.",
+    "La existencia de la póliza y la recepción del aviso no implican aceptación de cobertura, reconocimiento de responsabilidad ni determinación de cuantía por parte de la aseguradora.",
+    "Las imágenes documentan aspectos visibles o reportados; no permiten certificar por sí solas daño estructural, estabilidad, habitabilidad, causalidad técnica o alcance definitivo de las afectaciones.",
+    "La póliza y los datos del expediente se identifican como sintéticos para fines de prueba, según la documentación suministrada."
+  ]
+}
