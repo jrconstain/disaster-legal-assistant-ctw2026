@@ -36,7 +36,15 @@ const getUserState = (phoneNumber) => {
             has_insurance: null,
             has_credit: null,
             building_type: null,
+            bank: null,
+            policy_number: null,
+            credit_balance: null,
+            insured_value: null,
+            expenses: null,
+            radicado: null,
+            stage: 'PROFILING',
             consent: null,
+            is_confirmed: false,
             history: []
         };
         writeDB(db);
@@ -58,7 +66,16 @@ const updateUserState = (phoneNumber, newData, newMessage, aiReply) => {
         if (newData.has_insurance !== undefined) db[phoneNumber].has_insurance = newData.has_insurance;
         if (newData.has_credit !== undefined) db[phoneNumber].has_credit = newData.has_credit;
         if (newData.building_type !== undefined) db[phoneNumber].building_type = newData.building_type;
+        if (newData.bank !== undefined) db[phoneNumber].bank = newData.bank;
+        if (newData.policy_number !== undefined) db[phoneNumber].policy_number = newData.policy_number;
+        if (newData.credit_balance !== undefined) db[phoneNumber].credit_balance = newData.credit_balance;
+        if (newData.insured_value !== undefined) db[phoneNumber].insured_value = newData.insured_value;
+        if (newData.expenses !== undefined) db[phoneNumber].expenses = newData.expenses;
+        if (newData.radicado !== undefined) db[phoneNumber].radicado = newData.radicado;
+        if (newData.stage !== undefined) db[phoneNumber].stage = newData.stage;
+        
         if (newData.consent !== undefined) db[phoneNumber].consent = newData.consent;
+        if (newData.is_confirmed !== undefined) db[phoneNumber].is_confirmed = newData.is_confirmed;
 
         // Añadir al historial
         if (newMessage) {
