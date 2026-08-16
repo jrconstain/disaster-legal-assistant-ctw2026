@@ -223,6 +223,51 @@ li {
   color: var(--text);
 }
 
+/* Dropdown */
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+  padding: 1rem 0; /* Ensures the hover doesn't break when moving mouse down */
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background-color: var(--bg);
+  min-width: 180px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  border-radius: 8px;
+  padding: 0.5rem 0;
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.nav-dropdown:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-item {
+  display: block;
+  padding: 0.625rem 1.25rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  text-align: center;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(0,0,0,0.03);
+  color: var(--text);
+}
+
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -251,8 +296,14 @@ li {
   transition: filter 0.3s ease;
 }
 
+iframe.main-video {
+  border: none;
+  pointer-events: auto;
+}
+
 .main-video.dimmed {
   filter: brightness(0.4);
+  pointer-events: none;
 }
 
 .video-overlay {
@@ -320,6 +371,61 @@ li {
   line-height: 1.8;
   margin-bottom: 2rem;
   max-width: var(--reading-w);
+}
+
+/* Team and Photos */
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+  .team-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--bg);
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: transform 0.2s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-2px);
+}
+
+.team-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  border: 4px solid #fff;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.06);
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.photo-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 /* Footer */

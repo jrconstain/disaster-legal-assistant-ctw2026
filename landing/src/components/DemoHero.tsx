@@ -1,46 +1,65 @@
 import { useEffect, useRef, useState } from 'react';
-import { DEMO_VIDEO_SRC, DEMO_POSTER_SRC, getWhatsAppUrl } from '../config';
+import { getWhatsAppUrl, YOUTUBE_VIDEO_ID } from '../config';
 
 export default function DemoHero() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isBlocked, setIsBlocked] = useState(false);
+  const playerRef = useRef<any>(null);
   const [isEnded, setIsEnded] = useState(false);
 
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
+    let player: any;
 
-    // We intentionally try to play with sound as requested
-    video.muted = false;
-    const playPromise = video.play();
-
-    if (playPromise !== undefined) {
-      playPromise.catch((error) => {
-        console.log("Autoplay with sound blocked by browser:", error);
-        setIsBlocked(true);
-        // Requirement: Do NOT automatically switch to muted. Show button.
+    const initPlayer = () => {
+      // @ts-ignore
+      player = new window.YT.Player('youtube-player', {
+        videoId: YOUTUBE_VIDEO_ID,
+        playerVars: {
+          autoplay: 1, // Intentar autoplay (YouTube maneja la restricción del navegador)
+          controls: 1,
+          rel: 0,
+          modestbranding: 1,
+          playsinline: 1
+        },
+        events: {
+          onStateChange: (event: any) => {
+            // @ts-ignore
+            if (event.data === window.YT.PlayerState.ENDED) {
+              setIsEnded(true);
+            }
+            // @ts-ignore
+            if (event.data === window.YT.PlayerState.PLAYING) {
+              setIsEnded(false);
+            }
+          }
+        }
       });
+      playerRef.current = player;
+    };
+
+    // @ts-ignore
+    if (!window.YT) {
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag?.parentNode?.insertBefore(tag, firstScriptTag);
+      // @ts-ignore
+      window.onYouTubeIframeAPIReady = initPlayer;
+    } else {
+      initPlayer();
     }
+
+    return () => {
+      if (playerRef.current && typeof playerRef.current.destroy === 'function') {
+        playerRef.current.destroy();
+      }
+    };
   }, []);
-
-  const handleForcePlay = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = false;
-      videoRef.current.play();
-      setIsBlocked(false);
-      setIsEnded(false);
-    }
-  };
-
-  const handleEnded = () => {
-    setIsEnded(true);
-  };
 
   const handleReplay = (e: React.MouseEvent) => {
     e.preventDefault();
-    if (videoRef.current) {
-      videoRef.current.currentTime = 0;
-      handleForcePlay();
+    if (playerRef.current && typeof playerRef.current.seekTo === 'function') {
+      playerRef.current.seekTo(0);
+      playerRef.current.playVideo();
+      setIsEnded(false);
     }
   };
 
@@ -48,24 +67,8 @@ export default function DemoHero() {
     <section id="demo" className="section pb-0" style={{ paddingTop: '2rem' }}>
       <div className="container">
         <div className="video-wrapper" id="demo-video-wrapper" style={{ marginBottom: '3rem' }}>
-          <video
-            ref={videoRef}
-            src={DEMO_VIDEO_SRC}
-            poster={DEMO_POSTER_SRC}
-            playsInline
-            controls={!isBlocked && !isEnded}
-            preload="auto"
-            onEnded={handleEnded}
-            className={`main-video ${isEnded ? 'dimmed' : ''}`}
-          />
-
-          {isBlocked && (
-            <div className="video-overlay" style={{ background: 'rgba(0,0,0,0.6)' }}>
-              <button onClick={handleForcePlay} className="btn btn-large">
-                Reproducir demo con sonido
-              </button>
-            </div>
-          )}
+          
+          <div id="youtube-player" className={`main-video ${isEnded ? 'dimmed' : ''}`}></div>
 
           {isEnded && (
             <div className="video-overlay ended-overlay">
